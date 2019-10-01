@@ -18,7 +18,8 @@ class MealsController extends Controller
      */
     public function index()
     {
-        return view("layout");
+        $meals = Meal::all();
+        return view("meals/index", compact("meals"));
     }
 
     /**
@@ -59,7 +60,7 @@ class MealsController extends Controller
      */
     public function show($id)
     {
-        //
+        return view("meals.show")->withMeal(Meal::find($id));
     }
 
     /**
