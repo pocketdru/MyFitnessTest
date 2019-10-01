@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+use App\Meal;
+
+
 class MealsController extends Controller
 {
     /**
@@ -15,7 +18,7 @@ class MealsController extends Controller
      */
     public function index()
     {
-        //
+        return view("layout");
     }
 
     /**
@@ -25,7 +28,7 @@ class MealsController extends Controller
      */
     public function create()
     {
-        //
+        return view("meals.create");
     }
 
     /**
@@ -36,7 +39,16 @@ class MealsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $meal = new Meal();
+        $meal->name = $request->name;
+
+        $meal->save();
+
+        // var_dump($request->name);
+        // var_dump($request->password);
+        // var_dump($request->email);
+
+        return redirect("layout");
     }
 
     /**
