@@ -11,8 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('layout');
-});
+Route::get('', "HomeController@index");
 
 Route::resource("/meals", "MealsController");
