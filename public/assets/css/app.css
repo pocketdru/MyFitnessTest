@@ -30,3 +30,11 @@ body {
 .welcome {
     background-color: #ffffff;
 }
+
+.register label {
+    font-weight: bold;
+}
+
+.register-col {
+    background-color: rgba(255, 255, 255, 0.7);
+}

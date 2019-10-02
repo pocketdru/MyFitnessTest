@@ -1,7 +1,7 @@
 @extends("layout")
 
 @section("title")
-Create a user
+Create a meal
 @stop
 
 @section("content")
