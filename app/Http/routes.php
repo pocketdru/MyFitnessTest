@@ -11,6 +11,11 @@
 |
 */
 
-Route::get('', "HomeController@index");
+Route::resource('', "HomeController@index");
 
 Route::resource("/meals", "MealsController");
+
+Route::resource("/login", "LoginController");
+
+Route::resource("/register", "RegisterController");
+
