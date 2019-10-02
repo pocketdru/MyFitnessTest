@@ -44,6 +44,9 @@ class RegisterController extends Controller
         $user->userPassword = $request->password;
 
         $user->save();
+        
+        return redirect("home/home");
+
     }
 
     /**
