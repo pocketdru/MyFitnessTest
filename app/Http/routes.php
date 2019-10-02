@@ -10,12 +10,14 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+Route::resource("", "HomeController@index");
+Route::resource("/users", "HomeController");
 
-Route::resource('', "HomeController@index");
 
 Route::resource("/meals", "MealsController");
 
 Route::resource("/login", "LoginController");
 
-Route::resource("/register", "RegisterController");
+// Route::resource("/register", "RegisterController");
 
+// Route::get("/home", view("home/home"));

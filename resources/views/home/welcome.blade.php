@@ -12,7 +12,7 @@ My Fitness buddy
     <div class="row justify-content-center">
         <div class="col-3 welcome">
             <h6 class="m-5">
-                <a href="login">Login </a> or <a href="/register">register</a> to get started
+                <a href="login">Login </a> or <a href="users/create">register</a> to get started
             </h6>  
         </div>
     </div> 

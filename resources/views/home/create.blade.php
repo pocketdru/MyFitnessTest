@@ -7,7 +7,7 @@
 @section("content")
 <div class="row justify-content-center register">
     <div class="col-5 register-col p-2">
-        <form action="/register" method="post">
+        <form action="/users" method="post">
             <div class="form-group">
                 <label for="exampleInputName">Name</label>
                 <input name="name" class="form-control" id="exampleInputName" placeholder="">
