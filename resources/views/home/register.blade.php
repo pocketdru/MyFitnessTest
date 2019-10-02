@@ -22,7 +22,7 @@
             </div>
             <div class="form-group">
                 <label for="exampleInputName">Confirm Password</label>
-                <input name="password" class="form-control" id="exampleInputName" placeholder="">
+                <input name="confirm-password" class="form-control" id="exampleInputName" placeholder="">
             </div>
 
 

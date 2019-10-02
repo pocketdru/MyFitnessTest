@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+use App\User;
+
 class RegisterController extends Controller
 {
     /**
@@ -36,7 +38,12 @@ class RegisterController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = new User();
+        $user->userName = $request->name;
+        $user->email = $request->email;
+        $user->userPassword = $request->password;
+
+        $user->save();
     }
 
     /**
