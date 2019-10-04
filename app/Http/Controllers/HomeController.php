@@ -8,6 +8,10 @@ use App\Http\Requests;
 
 use App\User;
 
+use Illuminate\Support\Facades\Validator;
+
+use Illuminate\Support\Facades\Input;
+
 class HomeController extends Controller
 {
     /**
@@ -40,12 +44,39 @@ class HomeController extends Controller
      */
     public function store(Request $request)
     {
-        $user = new User();
-        $user->userName = $request->name;
-        $user->email = $request->email;
-        $user->userPassword = $request->password;
+        // var_dump($request->name);
 
-        $user->save();
+
+        $rules = array(
+            "name" =>'required|unique:users',
+        );
+    
+        $validator = Validator::make(Input::all(), $rules);
+
+        if ($validator->fails()) 
+        {
+            return var_dump("shit");
+        } else {
+            //  var_dump("ok");
+            $user = new User();
+            $user->name = $request->name;
+            $user->email = $request->email;
+            $user->password = $request->password;
+    
+            $user->save();
+        }
+
+
+        // $this->validate($request, [
+        //     "name" => 'required|string|unique:users"|"max:255',
+        // ]);
+
+        // $user = new User();
+        // $user->userName = $request->name;
+        // $user->email = $request->email;
+        // $user->userPassword = $request->password;
+
+        // $user->save();
         // return redirect("home/home");
         return redirect()->action(
             'HomeController@show', $user
