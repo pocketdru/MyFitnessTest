@@ -57,10 +57,17 @@ class HomeController extends Controller
 
         if ($validator->fails()) 
         {
-            // return var_dump("shit");
-            // return redirect('home/errors')
-            // ->withErrors($validator, 'login');
-            return Redirect::back()->withErrors(['Something went wrong', 'The Message']);
+  
+
+
+
+            // return Redirect::back()->withErrors(['Something went wrong', 'The Message']);
+
+            return Redirect::back()
+            ->withErrors($validator)
+            ->withInput();
+
+
 
         } else {
             //  var_dump("ok");
@@ -72,18 +79,6 @@ class HomeController extends Controller
             $user->save();
         }
 
-
-        // $this->validate($request, [
-        //     "name" => 'required|string|unique:users"|"max:255',
-        // ]);
-
-        // $user = new User();
-        // $user->userName = $request->name;
-        // $user->email = $request->email;
-        // $user->userPassword = $request->password;
-
-        // $user->save();
-        // return redirect("home/home");
         return redirect()->action(
             'HomeController@show', $user
         );
