@@ -48,18 +48,20 @@ class HomeController extends Controller
 
 
         $rules = array(
-            "name" =>'required|unique:users',
+            "userName" =>'required|unique:users|max:255|min:3',
         );
     
         $validator = Validator::make(Input::all(), $rules);
 
         if ($validator->fails()) 
         {
-            return var_dump("shit");
+            // return var_dump("shit");
+            return redirect('register')
+            ->withErrors($validator, 'login');
         } else {
             //  var_dump("ok");
             $user = new User();
-            $user->name = $request->name;
+            $user->userName = $request->userName;
             $user->email = $request->email;
             $user->password = $request->password;
     

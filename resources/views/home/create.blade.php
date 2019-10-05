@@ -10,7 +10,7 @@
         <form action="/users" method="post">
             <div class="form-group">
                 <label for="exampleInputName">Name</label>
-                <input name="name" class="form-control" id="exampleInputName" placeholder="">
+                <input name="userName" class="form-control" id="exampleInputName" placeholder="">
             </div>
             <div class="form-group">
                 <label for="exampleInputName">E-Mail Adress</label>
