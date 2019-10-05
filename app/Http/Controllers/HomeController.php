@@ -51,6 +51,8 @@ class HomeController extends Controller
 
         $rules = array(
             "userName" =>'required|unique:users|max:255|min:3',
+            "email" => "required|unique:users|max:255|min:3",
+            "password" => "required|max:255|min:5"
         );
     
         $validator = Validator::make(Input::all(), $rules);
