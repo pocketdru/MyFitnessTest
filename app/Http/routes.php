@@ -12,6 +12,7 @@
 */
 Route::resource("", "HomeController@index");
 Route::resource("/users", "HomeController");
+Route::resource("/users/errors", "HomeController@errors");
 
 
 Route::resource("/meals", "MealsController");

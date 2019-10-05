@@ -5,6 +5,13 @@
 @stop
 
 @section("content")
+@if($errors->any())
+<div class="row justify-content-center">
+    <div class="col-4">
+        <h4 class="errorMessage">{{$errors->first()}}</h4>
+    </div>
+</div>
+@endif
 <div class="row justify-content-center register">
     <div class="col-5 register-col p-2">
         <form action="/users" method="post">

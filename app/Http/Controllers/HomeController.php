@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Validator;
 
 use Illuminate\Support\Facades\Input;
 
+use Illuminate\Support\Facades\Redirect;
+
 class HomeController extends Controller
 {
     /**
@@ -56,8 +58,10 @@ class HomeController extends Controller
         if ($validator->fails()) 
         {
             // return var_dump("shit");
-            return redirect('register')
-            ->withErrors($validator, 'login');
+            // return redirect('home/errors')
+            // ->withErrors($validator, 'login');
+            return Redirect::back()->withErrors(['Something went wrong', 'The Message']);
+
         } else {
             //  var_dump("ok");
             $user = new User();
@@ -133,5 +137,17 @@ class HomeController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    
+        /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function errors()
+    {
+        return view("home/errors");
     }
 }
