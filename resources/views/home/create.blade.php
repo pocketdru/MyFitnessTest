@@ -20,21 +20,27 @@
                 <input name="userName" class="form-control" id="exampleInputName" placeholder="">
             </div>
             @if ($errors->has('userName'))
-                <div class="error">{{ $errors->first('userName') }}</div>
+                <div class="error ml-5 mr-5">
+                    <p>{{ $errors->first('userName') }} </p>
+                </div>
             @endif
             <div class="form-group">
                 <label for="exampleInputName">E-Mail Adress</label>
                 <input name="email" class="form-control" id="exampleInputName" placeholder="">
             </div>
             @if ($errors->has('email'))
-                <div class="error">{{ $errors->first('email') }}</div>
+                <div class="error ml-5 mr-5"> 
+                    <p>{{ $errors->first('email') }} </p>
+                </div>
             @endif
             <div class="form-group">
                 <label for="exampleInputName">Password</label>
                 <input name="password" class="form-control" id="exampleInputName" placeholder="">
             </div>
             @if ($errors->has('password'))
-                <div class="error">{{ $errors->first('password') }}</div>
+                <div class="error ml-5 mr-5">
+                    <p>{{ $errors->first('password') }} </p>
+                </div>
             @endif
             <!-- <div class="form-group">
                 <label for="exampleInputName">Confirm Password</label>
