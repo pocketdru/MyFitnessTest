@@ -18,8 +18,11 @@ class MealsController extends Controller
      */
     public function index()
     {
-        $meals = Meal::all();
-        return view("meals/index", compact("meals"));
+        // $meals = Meal::all();
+        // return view("meals/index", compact("meals"));
+        return redirect()->action(
+            'MealsController@create'
+        );
     }
 
     /**
