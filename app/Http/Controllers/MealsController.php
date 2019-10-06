@@ -52,7 +52,9 @@ class MealsController extends Controller
         // var_dump($request->password);
         // var_dump($request->email);
 
-        return redirect("layout");
+        return redirect()->action(
+            'MealsController@show', $meal
+        );
     }
 
     /**

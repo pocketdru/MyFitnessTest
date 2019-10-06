@@ -59,18 +59,9 @@ class HomeController extends Controller
 
         if ($validator->fails()) 
         {
-  
-
-
-
-            // return Redirect::back()->withErrors(['Something went wrong', 'The Message']);
-
             return Redirect::back()
             ->withErrors($validator)
             ->withInput();
-
-
-
         } else {
             //  var_dump("ok");
             $user = new User();
