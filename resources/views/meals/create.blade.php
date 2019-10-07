@@ -5,7 +5,7 @@ Create a meal
 @stop
 
 @section("content")
-<form action="/meals" method="post">
+<form action="/food" method="post">
 <div class="form-group">
     <label for="exampleInputName">Name</label>
     <input name="name" class="form-control" id="exampleInputName" placeholder="Name">

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+use App\Food;
+
 class FoodController extends Controller
 {
     /**
@@ -36,7 +38,33 @@ class FoodController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // $rules = array(
+        //     "protein" =>"required|max:255",
+        //     "carbs" => "required|max:255",
+        //     "fat" => "required|max:255"
+        // );
+    
+        // $validator = Validator::make(Input::all(), $rules);
+
+        // if ($validator->fails()) 
+        // {
+        //     return Redirect::back()
+        //     ->withErrors($validator)
+        //     ->withInput();
+        // } else {
+            //  var_dump("ok");
+            $food = new Food();
+            $food->foodName = $request->foodName;
+            $food->protein = $request->protein;
+            $food->carbs = $request->carbs;
+            $food->fat = $request->fat;
+    
+            $food->save();
+        // }
+
+        // return redirect()->action(
+        //     'HomeController@show', $food
+        // );
     }
 
     /**

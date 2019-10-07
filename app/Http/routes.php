@@ -14,6 +14,7 @@ Route::resource("", "HomeController");
 Route::resource("/users", "HomeController");
 
 Route::resource("/meals", "MealsController");
+Route::resource('/food', 'FoodController');
 
 Route::resource("/login", "LoginController");
 
