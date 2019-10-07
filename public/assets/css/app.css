@@ -36,11 +36,21 @@ body {
 }
 
 .register-col {
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 .error p {
     background-color: rgba(255, 0, 0, 0.7);
     font-weight: 400;
     letter-spacing: 0.7px;
+}
+
+.meal-name {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.meal-details  {
+    text-align: start;
+    font-weight: bold;
+
 }
