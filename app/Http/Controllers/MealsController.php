@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 
 use App\Meal;
+use App\Food;
 
 
 class MealsController extends Controller
@@ -48,6 +49,12 @@ class MealsController extends Controller
 
         $meal->save();
 
+        // $foods = Food::all();
+    //    var_dump($foods[1]->foodName);
+    //     $foods[1]->meal_id = 1;
+        
+        // $foods->save();
+
         // var_dump($request->name);
         // var_dump($request->password);
         // var_dump($request->email);
@@ -64,7 +71,7 @@ class MealsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
+    {   
         return view("meals.meals")->withMeal(Meal::find($id));
     }
 

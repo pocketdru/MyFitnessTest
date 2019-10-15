@@ -10,6 +10,7 @@
 <div class="row meal-name pb-3">
     <div class="col-12">
         <h2> {{ $meal->name }} </h2>
+        <h2> {{ $meal->id}}
     </div>
 </div>
 <div class="row">
@@ -20,6 +21,7 @@
 <div class="row justify-content-center meal-details">
     <div class="col-8 register-col p-2">
         <form action="/food" method="post">
+            <input type="hidden" name="meal_id" value=" {{ $meal->id}} ">
             <div class="form-group">
                 <label for="exampleInputName">Food Name</label>
                 <input name="foodName" class="form-control" id="exampleInputName" placeholder="">

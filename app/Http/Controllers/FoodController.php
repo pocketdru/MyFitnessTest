@@ -8,6 +8,8 @@ use App\Http\Requests;
 
 use App\Food;
 
+use App\Meal;
+
 class FoodController extends Controller
 {
     /**
@@ -52,13 +54,13 @@ class FoodController extends Controller
         //     ->withErrors($validator)
         //     ->withInput();
         // } else {
-            //  var_dump("ok");
+            var_dump($request->meal_id);
             $food = new Food();
             $food->foodName = $request->foodName;
             $food->protein = $request->protein;
             $food->carbs = $request->carbs;
             $food->fat = $request->fat;
-    
+            $food->meal_id = $request->meal_id;
             $food->save();
         // }
 

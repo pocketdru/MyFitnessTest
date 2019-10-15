@@ -18,8 +18,13 @@ class CreateFoodsTable extends Migration
             $table->float("protein");
             $table->float("carbs");
             $table->float("fat");
+            $table->integer('meal_id')->unsigned();
             $table->timestamps();
         });
+
+        Schema::table('foods', function($table) {
+            $table->foreign('meal_id')->references('id')->on('meals')->onDelete('cascade');;
+        });  
     }
 
     /**
